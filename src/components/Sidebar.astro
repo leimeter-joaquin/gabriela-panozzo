@@ -1,0 +1,36 @@
+---
+const fullPath = Astro.url.pathname;
+const textName = fullPath.split("/")[2];
+---
+
+<!-- TODO: use Storyblok for this shit -->
+<aside class="">
+  <ul>
+    <li>
+      <a
+        href="/textos/cancion-de-cuna/"
+        class={textName === "cancion-de-cuna" ? "text-red-500" : ""}
+        >Cancion de cuna</a
+      >
+    </li>
+    <li>
+      <a href="/textos/culo/" class={textName === "culo" ? "text-red-500" : ""}
+        >Culo</a
+      >
+    </li>
+    <li>
+      <a
+        href="/textos/no-dejes-de-brillar/"
+        class={textName === "no-dejes-de-brillar" ? "text-red-500" : ""}
+        >No dejas de brillar</a
+      >
+    </li>
+    <li>
+      <a
+        href="/textos/corazon-huye/"
+        class={textName === "corazon-huye" ? "text-red-500" : ""}
+        >Corazon, huye</a
+      >
+    </li>
+  </ul>
+</aside>
