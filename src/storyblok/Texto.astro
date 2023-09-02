@@ -1,0 +1,19 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+const { blok, titulo } = Astro.props;
+
+const text = blok.contenidoRichText.content.map((item: any) => {
+  if (!item.content) return "empty";
+  return item.content[0].text;
+});
+---
+
+<div {...storyblokEditable(blok)}>
+  <h1>titulo: {titulo}</h1>
+  {
+    text.map((p: string) => {
+      if (p === "empty") return <p>&nbsp;</p>;
+      return <p>{p}</p>;
+    })
+  }
+</div>

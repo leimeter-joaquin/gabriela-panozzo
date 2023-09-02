@@ -1,11 +1,29 @@
 ---
+import { useStoryblokApi } from "@storyblok/astro";
 const fullPath = Astro.url.pathname;
 const textName = fullPath.split("/")[2];
+
+const storyblokApi = useStoryblokApi();
+
+const { data } = await storyblokApi.get(`cdn/stories`, {
+  version: "draft",
+  starts_with: "textos/",
+});
 ---
 
-<!-- TODO: use Storyblok for this shit -->
 <aside class="">
-  <ul>
+  {
+    data.stories.map((texto: any) => {
+      const slug = texto.slug;
+      const link = `/textos/${slug}`;
+      return (
+        <li class={textName === slug ? "text-red-500" : ""}>
+          <a href={link}>{texto.name}</a>
+        </li>
+      );
+    })
+  }
+  <!-- <ul>
     <li>
       <a
         href="/textos/cancion-de-cuna/"
@@ -32,5 +50,5 @@ const textName = fullPath.split("/")[2];
         >Corazon, huye</a
       >
     </li>
-  </ul>
+  </ul> -->
 </aside>
