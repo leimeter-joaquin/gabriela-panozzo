@@ -2,6 +2,10 @@
 // import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
 import Layout from "../layouts/Layout.astro";
+
+const { hostname } = Astro.url;
+
+console.log(hostname);
 ---
 
 <Layout title="Home" />
