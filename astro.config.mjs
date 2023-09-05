@@ -7,11 +7,11 @@ import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 
 const env = loadEnv("", process.cwd(), ["STORYBLOK_TOKEN", "PUBLIC_ENV"]);
-console.log(env.PUBLIC_ENV);
+
 // https://astro.build/config
 export default defineConfig({
-  // output: process.env.PUBLIC_ENV === "preview" ? "server" : "static",
-  // adapter: process.env.PUBLIC_ENV === "preview" ? vercel() : undefined,
+  output: process.env.PUBLIC_ENV === "preview" ? "server" : "static",
+  adapter: process.env.PUBLIC_ENV === "preview" ? vercel() : undefined,
   output: "server",
   vite: {
     plugins: [basicSsl()],
