@@ -3,11 +3,11 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import Layout from "../../layouts/Layout.astro";
 
-console.log("HELPME", import.meta.env.PUBLIC_ENV);
-
 const storyblokApi = useStoryblokApi();
 
 export async function getStaticPaths() {
+  const storyblokApi = useStoryblokApi();
+
   const { data: texts } = await storyblokApi.get("cdn/stories", {
     version: "draft",
     starts_with: "textos/",
