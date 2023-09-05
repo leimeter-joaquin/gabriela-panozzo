@@ -3,28 +3,33 @@ import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import Layout from "../../layouts/Layout.astro";
 
-export async function getStaticPaths() {
-  const storyblokApi = useStoryblokApi();
+console.log("HELPME", import.meta.env.PUBLIC_ENV);
 
+const storyblokApi = useStoryblokApi();
+
+export async function getStaticPaths() {
   const { data: texts } = await storyblokApi.get("cdn/stories", {
     version: "draft",
     starts_with: "textos/",
   });
 
-  // return [
-  //   {
-  //     params: { texto: "test" },
-  //   },
-  // ];
-
-  // console.log("texts.stories", texts.stories);
   return texts.stories.map((story: any) => ({
     params: { texto: story.slug as string },
-    props: { content: story.content, titulo: story.name },
   }));
 }
+
 const { texto } = Astro.params;
-const { content, titulo } = Astro.props;
+
+const { data: texts } = await storyblokApi.get(`cdn/stories/textos/${texto}`, {
+  version: "draft",
+});
+
+let content, titulo;
+
+if (texts) {
+  content = texts.story.content;
+  titulo = texts.story.name;
+}
 ---
 
 <Layout title="Something">
