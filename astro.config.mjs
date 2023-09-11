@@ -11,8 +11,6 @@ const env = loadEnv("", process.cwd(), ["STORYBLOK_TOKEN", "IS_PREVIEW"]);
 const output = env.IS_PREVIEW ? "server" : "static";
 const adapter = env.IS_PREVIEW ? vercel() : undefined;
 
-console.log("VARIABLES", env);
-
 // https://astro.build/config
 export default defineConfig({
   output,

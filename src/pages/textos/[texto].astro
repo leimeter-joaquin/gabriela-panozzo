@@ -19,8 +19,6 @@ export async function getStaticPaths() {
   }));
 }
 
-console.log("Hello World!");
-
 const { texto } = Astro.params;
 
 const { data: texts } = await storyblokApi.get(`cdn/stories/textos/${texto}`, {
