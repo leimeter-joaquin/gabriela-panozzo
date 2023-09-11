@@ -9,7 +9,8 @@ export async function getStaticPaths() {
   const storyblokApi = useStoryblokApi();
 
   const { data: texts } = await storyblokApi.get("cdn/stories", {
-    version: import.meta.env.DEV ? "draft" : "published",
+    version:
+      import.meta.env.DEV || process.env.IS_PREVIEW ? "draft" : "published",
     starts_with: "textos/",
   });
 
@@ -23,7 +24,8 @@ console.log("Hello World!");
 const { texto } = Astro.params;
 
 const { data: texts } = await storyblokApi.get(`cdn/stories/textos/${texto}`, {
-  version: import.meta.env.DEV ? "draft" : "published",
+  version:
+    import.meta.env.DEV || process.env.IS_PREVIEW ? "draft" : "published",
 });
 
 let content, titulo;
