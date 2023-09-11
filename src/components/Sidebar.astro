@@ -5,8 +5,11 @@ const textName = fullPath.split("/")[2];
 
 const storyblokApi = useStoryblokApi();
 
+console.log("process.env.IS_PREVIEW", process.env.IS_PREVIEW);
+
 const { data } = await storyblokApi.get(`cdn/stories`, {
-  version: import.meta.env.DEV ? "draft" : "published",
+  version:
+    import.meta.env.DEV || process.env.IS_PREVIEW ? "draft" : "published",
   starts_with: "textos/",
 });
 ---
