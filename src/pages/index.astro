@@ -1,7 +1,12 @@
 ---
 // import StoryblokComponent from "@storyblok/astro/StoryblokComponent.astro";
 
+import { loadEnv } from "vite";
+
 // import Layout from "../layouts/Layout.astro";
+const env = loadEnv("", process.cwd(), ["STORYBLOK_TOKEN", "IS_PREVIEW"]);
+
+console.log("VARIABLES EN INDEX", env);
 ---
 
 <!-- <Layout title="Home" /> -->
