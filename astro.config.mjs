@@ -6,14 +6,10 @@ import tailwind from "@astrojs/tailwind";
 
 import vercel from "@astrojs/vercel/serverless";
 
-const env = loadEnv("", process.cwd(), ["STORYBLOK_TOKEN", "PUBLIC_ENV"]);
-console.log(env.PUBLIC_ENV);
-console.log("1", process.env.PUBLIC_ENV === "preview" ? "server" : "static");
-console.log("2", process.env.PUBLIC_ENV === "preview" ? vercel() : undefined);
-console.log(vercel());
+const env = loadEnv("", process.cwd(), ["STORYBLOK_TOKEN", "IS_PREVIEW"]);
 
-const output = process.env.PUBLIC_ENV === "preview" ? "server" : "static";
-const adapter = process.env.PUBLIC_ENV === "preview" ? vercel() : undefined;
+const output = process.env.IS_PREVIEW === "preview" ? "server" : "static";
+const adapter = process.env.IS_PREVIEW === "preview" ? vercel() : undefined;
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,7 +24,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     storyblok({
-      bridge: process.env.PUBLIC_ENV !== "production",
+      bridge: process.env.IS_PREVIEW !== "production",
 
       accessToken: env.STORYBLOK_TOKEN,
 
