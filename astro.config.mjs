@@ -26,7 +26,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     storyblok({
-      bridge: process.env.IS_PREVIEW,
+      bridge: env.IS_PREVIEW,
 
       accessToken: env.STORYBLOK_TOKEN,
 
