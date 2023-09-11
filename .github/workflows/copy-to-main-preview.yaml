@@ -33,6 +33,6 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
-          git add .
-          git commit -m "Copy changes from main branch"
+          git config --global user.email "leimeter.joaquin@gmail.com"
+          git config --global user.name "leimeter-joaquin"
           git push -f origin main-preview
