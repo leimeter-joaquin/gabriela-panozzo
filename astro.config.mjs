@@ -8,8 +8,8 @@ import vercel from "@astrojs/vercel/serverless";
 
 const env = loadEnv("", process.cwd(), ["STORYBLOK_TOKEN", "IS_PREVIEW"]);
 
-const output = env.IS_PREVIEW === "preview" ? "server" : "static";
-const adapter = env.IS_PREVIEW === "preview" ? vercel() : undefined;
+const output = env.IS_PREVIEW ? "server" : "static";
+const adapter = env.IS_PREVIEW ? vercel() : undefined;
 
 console.log("VARIABLES", env);
 
