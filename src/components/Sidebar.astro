@@ -12,13 +12,15 @@ const { data } = await storyblokApi.get(`cdn/stories`, {
 });
 ---
 
-<aside class="">
+<aside class="flex flex-col gap-10">
   {
     data.stories.map((texto: any) => {
       const slug = texto.slug;
       const link = `/textos/${slug}`;
       return (
-        <li class={textName === slug ? "text-red-500" : ""}>
+        <li
+          class={`list-none text-lg ${textName === slug ? "text-red-500" : ""}`}
+        >
           <a href={link}>{texto.name}</a>
         </li>
       );
