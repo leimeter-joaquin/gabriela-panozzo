@@ -10,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" data-theme="myTheme" class="font-poppins">
+<html lang="en" data-theme="light" class="font-poppins">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -25,15 +25,13 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="bg-[#FDF6ED]">
     <Header />
-    <main
-      class="flex bg-green-100 justify-center gap-20 px-36 min-h-screen pt-12"
-    >
-      <div class="flex-grow-[1] bg-blue-200 text-right">
+    <main class="flex justify-center gap-20 px-60 min-h-[80vh] pt-10 pb-20">
+      <div class="text-right w-[30%] pt-8">
         <Sidebar />
       </div>
-      <article class="flex-grow-[4] bg-yellow-300">
+      <article class="w-[70%]">
         <slot />
       </article>
     </main>

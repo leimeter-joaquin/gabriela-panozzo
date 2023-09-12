@@ -9,11 +9,14 @@ const text = blok.contenidoRichText.content.map((item: any) => {
 ---
 
 <div {...storyblokEditable(blok)}>
-  <h1>titulo: {titulo}</h1>
-  {
-    text.map((p: string) => {
-      if (p === "empty") return <p>&nbsp;</p>;
-      return <p>{p}</p>;
-    })
-  }
+  <h1 class="text-title mb-8 text-primary">{titulo}</h1>
+  <title>{titulo}</title>
+  <div class="text-paragraph text-base-content-dim">
+    {
+      text.map((p: string) => {
+        if (p === "empty") return <p>&nbsp;</p>;
+        return <p>{p}</p>;
+      })
+    }
+  </div>
 </div>

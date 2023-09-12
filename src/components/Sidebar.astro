@@ -19,7 +19,9 @@ const { data } = await storyblokApi.get(`cdn/stories`, {
       const link = `/textos/${slug}`;
       return (
         <li
-          class={`list-none text-lg ${textName === slug ? "text-red-500" : ""}`}
+          class={`list-none text-link ${
+            textName === slug ? "text-primary" : "text-base-content-dim"
+          }`}
         >
           <a href={link}>{texto.name}</a>
         </li>
