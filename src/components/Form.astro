@@ -1,0 +1,40 @@
+<script>
+  const form = document.getElementById("footerform");
+  form?.addEventListener("submit", (e: Event) => {
+    e.preventDefault();
+    const { email, mensaje } = Object.fromEntries(
+      new FormData(e.target as HTMLFormElement)
+    );
+    console.log({ email, mensaje });
+  });
+</script>
+
+<form
+  id="footerform"
+  class="bg-red-300 flex flex-col gap-6 p-4"
+  onsubmit="
+  submit
+  "
+>
+  <label for="footer-input-email">email</label>
+  <input
+    id="footer-input-email"
+    class="rounded p-2"
+    required
+    name="email"
+    placeholder="tuemail@donde.com"
+    type="email"
+  />
+  <label for="footer-input-mensaje">mensaje</label>
+  <textarea
+    id="footer-input-mensaje"
+    class="rounded p-2"
+    required
+    name="mensaje"
+    placeholder="Me encanta lo que escribis!"
+    rows="7"
+    minlength="10"></textarea>
+  <button class="uppercase px-4 py-2 hover:scale-105 bg-accent rounded">
+    ENVIAR
+  </button>
+</form>

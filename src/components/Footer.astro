@@ -1,7 +1,22 @@
 ---
-
+import Form from "./Form.astro";
 ---
 
-<footer class="bg-primary pt-12">
-  <h2 class="text-section-header text-secondary">Contacto</h2>
+<footer class="bg-primary pt-12 pb-40">
+  <div class="flex justify-center gap-10">
+    <div class="max-w-md bg-blue-300 flex flex-col gap-3">
+      <h2 class="text-section-header text-secondary">Contacto</h2>
+      <div class="flex flex-col gap-16 text-base-content-dim text-paragraph">
+        <p>
+          Si te interesa lo que escribo y querés comunicarte podés hacerlo por
+          mail o por instagram.
+        </p>
+        <p>Acá te dejo un formulario para enviarme un mail más facilmente.</p>
+        <p>Y un link a Instagram. Gracias por leer!</p>
+      </div>
+    </div>
+    <div class="max-w-md bg-green-300">
+      <Form />
+    </div>
+  </div>
 </footer>
