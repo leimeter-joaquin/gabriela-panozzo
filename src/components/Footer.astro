@@ -2,21 +2,41 @@
 import Form from "./Form.astro";
 ---
 
-<footer class="bg-primary pt-12 pb-40">
+<footer class="bg-primary pt-12 pb-40 relative">
   <div class="flex justify-center gap-10">
-    <div class="max-w-md bg-blue-300 flex flex-col gap-3">
+    <div class="max-w-lg flex flex-col gap-3">
       <h2 class="text-section-header text-secondary">Contacto</h2>
       <div class="flex flex-col gap-16 text-base-content-dim text-paragraph">
         <p>
           Si te interesa lo que escribo y querés comunicarte podés hacerlo por
           mail o por instagram.
         </p>
-        <p>Acá te dejo un formulario para enviarme un mail más facilmente.</p>
-        <p>Y un link a Instagram. Gracias por leer!</p>
+        <div class="relative">
+          <img
+            src="/assets/arrows/arrow-2.svg"
+            alt="plant"
+            class="absolute -top-14 -right-10"
+          />
+          <p>Acá te dejo un formulario para enviarme un mail más facilmente.</p>
+        </div>
+        <div class="relative group/container">
+          <img
+            src="/assets/arrows/arrow-1.svg"
+            alt="arrow"
+            class="absolute top-10 left-10"
+          />
+          <a href="#" class="absolute top-28 left-44">
+            <img src="/assets/logos/mdi_instagram.svg" alt="instagram logo" />
+          </a>
+          <p>Y un link a Instagram. Gracias por leer!</p>
+        </div>
       </div>
     </div>
-    <div class="max-w-md bg-green-300">
-      <Form />
-    </div>
+    <Form />
   </div>
+  <img
+    src="/assets/plants/plant-3.svg"
+    alt="plant"
+    class="absolute top-40 right-0"
+  />
 </footer>

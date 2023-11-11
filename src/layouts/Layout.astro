@@ -27,13 +27,25 @@ const { title } = Astro.props;
   </head>
   <body class="bg-[#FDF6ED]">
     <Header />
-    <main class="flex justify-center gap-20 px-60 min-h-[80vh] pt-10 pb-20">
+    <main
+      class="flex justify-center gap-10 px-30 min-h-[80vh] pt-10 pb-40 xl:pb-20 relative"
+    >
       <div class="text-right w-[30%] pt-8">
         <Sidebar />
       </div>
-      <article class="w-[70%]">
+      <article class="w-[60%]">
         <slot />
       </article>
+      <img
+        src="/assets/plants/plant-1.svg"
+        alt="plant"
+        class="absolute -bottom-1 right-20"
+      />
+      <img
+        src="/assets/plants/plant-2.svg"
+        alt="plant"
+        class="absolute bottom-20 left-0"
+      />
     </main>
     <Footer />
   </body>
