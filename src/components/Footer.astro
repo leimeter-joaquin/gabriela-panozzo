@@ -2,8 +2,8 @@
 import Form from "./Form.astro";
 ---
 
-<footer class="bg-primary pt-12 pb-40 relative">
-  <div class="flex justify-center gap-10">
+<footer class="bg-primary pt-12 pb-72 xl:pb-40 relative">
+  <div class="flex flex-col lg:flex-row px-10 justify-center gap-40 lg:gap-10">
     <div class="max-w-lg flex flex-col gap-3">
       <h2 class="text-section-header text-secondary">Contacto</h2>
       <div class="flex flex-col gap-16 text-base-content-dim text-paragraph">
@@ -14,15 +14,15 @@ import Form from "./Form.astro";
         <div class="relative">
           <img
             src="/assets/arrows/arrow-2.svg"
-            alt="plant"
-            class="absolute -top-14 -right-10"
+            alt="arrow mail"
+            class="absolute rotate-90 -right-20 top-40 lg:-top-14 lg:-right-10 lg:rotate-0"
           />
           <p>Acá te dejo un formulario para enviarme un mail más facilmente.</p>
         </div>
         <div class="relative group/container">
           <img
             src="/assets/arrows/arrow-1.svg"
-            alt="arrow"
+            alt="arrow instagram"
             class="absolute top-10 left-10"
           />
           <a href="#" class="absolute top-28 left-44">
@@ -37,6 +37,6 @@ import Form from "./Form.astro";
   <img
     src="/assets/plants/plant-3.svg"
     alt="plant"
-    class="absolute top-40 right-0"
+    class="hidden md:block absolute top-[410px] xl:top-40 right-0"
   />
 </footer>
