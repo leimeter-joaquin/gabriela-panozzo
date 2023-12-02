@@ -2,7 +2,7 @@
 import Form from "./Form.astro";
 ---
 
-<footer class="bg-primary pt-12 pb-72 xl:pb-40 relative">
+<footer class="bg-primary pt-12 pb-96 md:pb-40 relative">
   <div class="flex flex-col lg:flex-row px-10 justify-center gap-40 lg:gap-10">
     <div class="max-w-lg flex flex-col gap-3">
       <h2 class="text-section-header text-secondary">Contacto</h2>
@@ -15,7 +15,7 @@ import Form from "./Form.astro";
           <img
             src="/assets/arrows/arrow-2.svg"
             alt="arrow mail"
-            class="absolute rotate-90 -right-20 top-40 lg:-top-14 lg:-right-10 lg:rotate-0"
+            class="absolute rotate-90 -right-28 top-40 lg:-top-14 lg:-right-10 lg:rotate-0"
           />
           <p>Acá te dejo un formulario para enviarme un mail más facilmente.</p>
         </div>
@@ -23,9 +23,9 @@ import Form from "./Form.astro";
           <img
             src="/assets/arrows/arrow-1.svg"
             alt="arrow instagram"
-            class="absolute top-10 left-10"
+            class="absolute rotate-12 md:rotate-0 top-20 md:top-10 md:left-10"
           />
-          <a href="#" class="absolute top-28 left-44">
+          <a href="#" class="absolute top-36 left-32 md:top-28 md:left-44">
             <img src="/assets/logos/mdi_instagram.svg" alt="instagram logo" />
           </a>
           <p>Y un link a Instagram. Gracias por leer!</p>
@@ -37,6 +37,6 @@ import Form from "./Form.astro";
   <img
     src="/assets/plants/plant-3.svg"
     alt="plant"
-    class="hidden md:block absolute top-[410px] xl:top-40 right-0"
+    class="absolute bot-[700px] md:top-[410px] xl:top-40 right-0"
   />
 </footer>
