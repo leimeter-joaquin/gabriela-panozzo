@@ -12,7 +12,14 @@ const { data } = await storyblokApi.get(`cdn/stories`, {
 });
 ---
 
-<aside class="flex flex-col gap-10">
+<script>
+  const aside = document.getElementById("sidebar");
+  aside?.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+</script>
+
+<aside class="flex flex-col gap-10" id="sidebar">
   {
     data.stories.map((texto: any) => {
       const slug = texto.slug;
