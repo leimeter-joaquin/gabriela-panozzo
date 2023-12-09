@@ -9,7 +9,7 @@ import { Icon } from "astro-icon";
 
   const sidebarClasses = sidebarWrapper?.getAttribute("class") as string;
   hamburgerButton?.addEventListener("click", () => {
-    sidebarWrapper?.setAttribute("class", sidebarClasses + "block");
+    sidebarWrapper?.setAttribute("class", sidebarClasses + " !block");
   });
 
   sidebarWrapper?.addEventListener("click", () => {
@@ -24,14 +24,14 @@ import { Icon } from "astro-icon";
 
   <div
     id="sidebar-wrapper"
-    class="fixed top-0 left-0 z-40 w-screen h-screen overflow-y-scroll hidden"
+    class="fixed top-0 left-0 z-40 w-screen h-screen hidden"
   >
-    <div class="bg-white pl-4 pt-16 pr-2 w-9/12">
+    <div class="bg-white pl-4 py-16 pr-2 w-9/12 h-full overflow-y-scroll">
       <Sidebar />
     </div>
   </div>
 
-  <a href="/" class="mt-40">
+  <a href="/" class="mt-4">
     <h1 class="prose uppercase text-main-header text-accent md:pt-0">
       Gabriela Panozzo
     </h1>
